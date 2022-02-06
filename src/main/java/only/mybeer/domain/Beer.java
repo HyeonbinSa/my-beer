@@ -8,6 +8,7 @@ import lombok.Setter;
 public class Beer {
     private Long beerId;
     private String beerName;
+    private double alc;
     private int beerPrice;
     private int categoryId;
 
@@ -15,9 +16,10 @@ public class Beer {
 
     }
 
-    public Beer(String beerName, int beerPrice, int categoryId) {
+    public Beer(String beerName, int beerPrice, int categoryId, double alc) {
         this.beerName = beerName;
         this.beerPrice = beerPrice;
+        this.alc = alc;
         this.categoryId = categoryId;
     }
 }

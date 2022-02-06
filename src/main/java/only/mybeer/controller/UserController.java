@@ -2,7 +2,7 @@ package only.mybeer.controller;
 
 import lombok.RequiredArgsConstructor;
 import only.mybeer.domain.User;
-import only.mybeer.domain.UserRepository;
+import only.mybeer.domain.repository.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

@@ -1,5 +1,6 @@
-package only.mybeer.domain;
+package only.mybeer.domain.repository;
 
+import only.mybeer.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
