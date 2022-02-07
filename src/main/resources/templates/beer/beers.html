@@ -26,20 +26,20 @@
             <thead>
             <tr>
                 <th>No</th>
-                <th>ID</th>
-                <th>PW</th>
-                <th>이름</th>
-                <th>Email</th>
+                <th>카테고리</th>
+                <th>맥주명</th>
+                <th>도수(%)</th>
+                <th>가격</th>
             </tr>
             </thead>
             <tbody>
-<!--            <tr th:each="user : ${users}">-->
-<!--                <td><a href="item.html" th:text="${user.userNo}">회원 ID</a></td>-->
-<!--                <td><a href="item.html" th:text="${user.userId}">테스트 상품1</a></td>-->
-<!--                <td th:text="${user.userPw}">10000</td>-->
-<!--                <td th:text="${user.userName}">10000</td>-->
-<!--                <td th:text="${user.email}">10</td>-->
-<!--            </tr>-->
+            <tr th:each="beer : ${beers}">
+                <td><a href="item.html" th:text="${beer.beerId}">회원 ID</a></td>
+                <td><a href="item.html" th:text="${beer.categoryId}">테스트 상품1</a></td>
+                <td th:text="${beer.beerName}">10000</td>
+                <td th:text="${beer.alc}">10000</td>
+                <td th:text="${beer.beerPrice}">10</td>
+            </tr>
             </tbody>
         </table>
     </div>

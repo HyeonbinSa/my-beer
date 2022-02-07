@@ -32,7 +32,7 @@ public class UserController {
             return "beer/beers"; // home으로 이동
         }
         model.addAttribute("status", false);
-        return "redirect:/users/login";
+        return "redirect:/product/beers";
     }
 
     // 회원 등록 Form 이동
