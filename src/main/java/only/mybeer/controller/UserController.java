@@ -16,9 +16,23 @@ import java.util.List;
 public class UserController {
     private final UserRepository userRepository;
 
+    // Login Page 이동
     @GetMapping("/login")
     public String loginForm() {
-        return "";
+        return "user/userLogin";
+    }
+
+    // Login Page 이동
+    @PostMapping("/login")
+    public String loginUser(@RequestParam String userId, @RequestParam String userPw, Model model) {
+        if (userRepository.loginUser(userId, userPw)) {
+            User user = userRepository.getUserById(userId);
+            model.addAttribute("user", user);
+            model.addAttribute("status", true);
+            return "beer/beers"; // home으로 이동
+        }
+        model.addAttribute("status", false);
+        return "redirect:/users/login";
     }
 
     // 회원 등록 Form 이동
@@ -43,10 +57,12 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public  String user(@PathVariable String userId, Model model){
+    public String user(@PathVariable String userId, Model model) {
         User user = userRepository.getUserById(userId);
         model.addAttribute("model", model);
-        return "users/";    }
+        return "users/";
+    }
+
     @PostConstruct
     public void init() {
         userRepository.join(new User("hello", "test1234", "실험맨", "hello@gmail.net"));

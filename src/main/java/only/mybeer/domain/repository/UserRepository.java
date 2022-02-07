@@ -46,4 +46,10 @@ public class UserRepository {
     public void deleteUser(String id) {
         userMap.remove(id);
     }
+
+    // 6. LOGIN
+    public boolean loginUser(String userId, String userPw) {
+        User user = userMap.get(userId);
+        return user.getUserPw().equals(userPw);
+    }
 }
