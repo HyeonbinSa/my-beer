@@ -10,20 +10,20 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User {
-    private Long no;
-    private String id;
-    private String pw;
-    private String name;
+    private Long userNo;
+    private String userId;
+    private String userPw;
+    private String userName;
     private String email;
 
     public User() {
 
     }
 
-    public User(String id, String pw, String name, String email) {
-        this.id = id;
-        this.pw = pw;
-        this.name = name;
+    public User(String userId, String userPw, String userName, String email) {
+        this.userId = userId;
+        this.userPw = userPw;
+        this.userName = userName;
         this.email = email;
     }
 }

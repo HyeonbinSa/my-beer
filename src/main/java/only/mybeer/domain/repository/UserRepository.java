@@ -19,8 +19,8 @@ public class UserRepository {
 
     // 1. 회원 가입
     public User join(User user) {
-        user.setNo(++sequence);
-        userMap.put(user.getId(), user);
+        user.setUserNo(++sequence);
+        userMap.put(user.getUserId(), user);
         return user;
     }
 
@@ -30,16 +30,16 @@ public class UserRepository {
     }
 
     // 3. 회원 조회
-    public User getUserById(String id) {
-        return userMap.get(id);
+    public User getUserById(String userId) {
+        return userMap.get(userId);
     }
 
     // 4. 회원 정보 수정
     public void updateUser(User user) {
-        User updatedUser = userMap.get(user.getId());
-        updatedUser.setPw(user.getPw());
+        User updatedUser = userMap.get(user.getUserId());
+        updatedUser.setUserPw(user.getUserPw());
         updatedUser.setEmail(user.getEmail());
-        updatedUser.setName(user.getName());
+        updatedUser.setUserName(user.getUserName());
     }
 
     // 5. 회원 삭제
