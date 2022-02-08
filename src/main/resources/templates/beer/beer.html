@@ -63,6 +63,12 @@ max-width: 560px;
             type="button">목록으로</button>
 
         </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    onclick="location.href='beers.html'"
+                    th:onclick="|location.href='@{/product/beers/remove/{beerId}(beerId=${beer.beerId})}'|"
+                    type="button">삭제</button>
+        </div>
     </div>
 </div> <!-- /container -->
 </body>

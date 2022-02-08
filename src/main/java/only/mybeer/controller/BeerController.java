@@ -44,6 +44,14 @@ public class BeerController {
         return "redirect:/product/beers/" + beer.getBeerId();
     }
 
+    @GetMapping("/remove/{beerId}")
+    public String removeBeer(@PathVariable Long beerId, Model model) {
+        beerRepository.delete(beerId);
+        model.addAttribute("removeStatus", true);
+        model.addAttribute("beerId", beerId);
+        return "redirect:/product/beers";
+    }
+
     @PostConstruct
     public void init() {
         beerRepository.save(new Beer("코젤다크", 3800, 1, 4.8));
