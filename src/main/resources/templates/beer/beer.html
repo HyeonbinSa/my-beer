@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+.container {
+max-width: 560px;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>맥주 상세</h2>
+    </div>
+
+    <!-- -->
+<!--    <h2 th:if="${param.status}" th:text="'저장 완료'"></h2>-->
+
+    <div>
+        <label for="beerId">상품 ID</label>
+        <input type="text" id="beerId" name="beerId" class="form-control"
+               value="1" th:value="${beer.beerId}" readonly>
+    </div>
+    <div>
+        <label for="beerName">맥주명</label>
+        <input type="text" id="beerName" name="beerName" class="form-control"
+               value="상품A" th:value="${beer.beerName}" readonly>
+    </div>
+    <div>
+        <label for="beerPrice">가격</label>
+        <input type="text" id="beerPrice" name="beerPrice" class="form-control"
+               value="10000" th:value="${beer.beerPrice}" readonly>
+    </div>
+    <div>
+        <label for="categoryId">카테고리</label>
+        <input type="text" id="categoryId" name="categoryId" class="form-control"
+               value="10" th:value="${beer.categoryId}" readonly>
+    </div>
+    <div>
+        <label for="alc">도수</label>
+        <input type="text" id="alc" name="alc" class="form-control"
+               value="10" th:value="${beer.alc}" readonly>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    onclick="location.href='beer.html'"
+                    type="button">상품 수정</button>
+            <!--                    th:onclick="|location.href='@{/basic/items/{itemId}/edit(itemId=${item.id})}'|"-->
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    onclick="location.href='beers.html'"
+                                        type="button">목록으로</button>
+<!--            th:onclick="|location.href='@{/basic/items}'|"-->
+        </div>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

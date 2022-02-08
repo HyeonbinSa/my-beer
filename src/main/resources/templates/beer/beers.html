@@ -34,7 +34,7 @@
             </thead>
             <tbody>
             <tr th:each="beer : ${beers}">
-                <td><a href="item.html" th:text="${beer.beerId}">회원 ID</a></td>
+                <td><a href="item.html" th:href="@{/product/beers/{beerId}(beerId=${beer.beerId})}" th:text="${beer.beerId}">회원 ID</a></td>
                 <td><a href="item.html" th:text="${beer.categoryId}">테스트 상품1</a></td>
                 <td th:text="${beer.beerName}">10000</td>
                 <td th:text="${beer.alc}">10000</td>

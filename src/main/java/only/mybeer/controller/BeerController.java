@@ -7,6 +7,7 @@ import only.mybeer.domain.repository.BeerRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.PostConstruct;
@@ -23,6 +24,13 @@ public class BeerController {
         List<Beer> beers = beerRepository.findAll();
         model.addAttribute("beers", beers);
         return "beer/beers";
+    }
+
+    @GetMapping("/{beerId}")
+    public String getBeer(@PathVariable Long beerId, Model model) {
+        Beer beer = beerRepository.findById(beerId);
+        model.addAttribute("beer",beer);
+        return "beer/beer";
     }
 
     @PostConstruct
