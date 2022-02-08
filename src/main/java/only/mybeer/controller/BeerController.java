@@ -6,9 +6,7 @@ import only.mybeer.domain.User;
 import only.mybeer.domain.repository.BeerRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -29,8 +27,21 @@ public class BeerController {
     @GetMapping("/{beerId}")
     public String getBeer(@PathVariable Long beerId, Model model) {
         Beer beer = beerRepository.findById(beerId);
-        model.addAttribute("beer",beer);
+        model.addAttribute("beer", beer);
         return "beer/beer";
+    }
+
+    @GetMapping("/update/{beerId}")
+    public String updateForm(@PathVariable Long beerId, Model model) {
+        Beer beer = beerRepository.findById(beerId);
+        model.addAttribute("beer", beer);
+        return "beer/update";
+    }
+
+    @PostMapping("/update/{beerId}")
+    public String updateBeer(@ModelAttribute("Beer") Beer beer, Model model) {
+        beerRepository.update(beer);
+        return "redirect:/product/beers/" + beer.getBeerId();
     }
 
     @PostConstruct

@@ -10,6 +10,7 @@ max-width: 560px;
 }
 
 
+
     </style>
 </head>
 <body>
@@ -19,7 +20,7 @@ max-width: 560px;
     </div>
 
     <!-- -->
-<!--    <h2 th:if="${param.status}" th:text="'저장 완료'"></h2>-->
+    <!--    <h2 th:if="${param.status}" th:text="'저장 완료'"></h2>-->
 
     <div>
         <label for="beerId">상품 ID</label>
@@ -51,14 +52,16 @@ max-width: 560px;
         <div class="col">
             <button class="w-100 btn btn-primary btn-lg"
                     onclick="location.href='beer.html'"
-                    type="button">상품 수정</button>
-            <!--                    th:onclick="|location.href='@{/basic/items/{itemId}/edit(itemId=${item.id})}'|"-->
+                    th:onclick="|location.href='@{/product/beers/update/{beerId}(beerId=${beer.beerId})}'|"
+                    type="button">상품 수정
+            </button>
         </div>
         <div class="col">
             <button class="w-100 btn btn-secondary btn-lg"
                     onclick="location.href='beers.html'"
-                                        type="button">목록으로</button>
-<!--            th:onclick="|location.href='@{/basic/items}'|"-->
+                        th:onclick="|location.href='@{/product/beers}'|"
+            type="button">목록으로</button>
+
         </div>
     </div>
 </div> <!-- /container -->
