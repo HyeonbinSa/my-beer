@@ -10,13 +10,14 @@ public class Beer {
     private String beerName;
     private double alc;
     private int beerPrice;
-    private int categoryId;
+    private Long categoryId;
+    private String description;
 
     public Beer() {
 
     }
 
-    public Beer(String beerName, int beerPrice, int categoryId, double alc) {
+    public Beer(String beerName, int beerPrice, Long categoryId, double alc) {
         this.beerName = beerName;
         this.beerPrice = beerPrice;
         this.alc = alc;
